@@ -1,0 +1,23 @@
+Login<br /> 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+{% if  loop.last %}
+<br /> <br /> <br />  {{message}}  <br /> <br /> <br /> 
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+  <form   method="POST">
+{{loginform.csrf_token}}<br /> 
+Username:<br />
+{{loginform.username}}<br /> 
+Password:  <br /> 
+{{loginform.password(type="password")}}<br /> 
+{{loginform.button}}<br /> 
+  </form>   <br> <br>  
+  <a   href="/register">Register</a>
+ 
+ 
+
+ 

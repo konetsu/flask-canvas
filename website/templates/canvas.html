@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 	<meta name="apple-mobile-web-app-capable" content="yes">
+ 	<meta name="apple-mobile-web-app-title" content="place">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/static/konetsu/style.css" rel="stylesheet">
+	<title>place</title>
+   <meta name="theme-color" content="#ff4500">
+ </head>	
+<form id="canvasform" hx-post="/placer" hx-target="#pixelcount"  >
+<input type="hidden" id="xcoord" name="xcoord" value="0"> 
+<input type="hidden" id="ycoord" name="ycoord" value="0"> 
+<input type="hidden" id="color" name="color" value="rgb(0, 0, 0)"> 
+<input id="formsubmitbtn" type="submit" >
+</form>	
+<div noselect="" id="mutebtn">
+<img class="svgimg" id="muteicon" src="/static/konetsu/mute.svg" height="100%"/>
+</div>	
+<span   noselect=""  id="pixelcount">Pixels: {{current_user.number_of_pixels}}</span>
+<div id="coorddisplay" noselect=""></div>
+<div id="placebtn" noselect=""  >Place a Pixel</div>
+<canvas id="canvas" noselect=""   width="1024" height="1024"></canvas>
+<div id="canvasoverlay" noselect=""  >
+<div id="pixelselector">
+<img class="svgimg" src="/static/konetsu/crosshair.svg" height="100%" />
+</div>
+</div>	
+<div id="colorlist" noselect="">
+<div id="colordivs"></div>
+<div id="buttondiv">
+<div id="cancelbutton">
+<img class="svgimg" src="/static/konetsu/xbtn.svg" height="100%" />
+</div>
+<label for="formsubmitbtn" >
+<div id="okbutton">
+<img class="svgimg" src="/static/konetsu/okbutton.svg" height="100%" />
+</div>
+</label>				
+</div>
+</div>
+<script src="/static/konetsu/script.js"></script>
+<script src="/static/konetsu/htmx.js"></script>
+<div id="canvasupdater"></div>
+</body>
+</html>

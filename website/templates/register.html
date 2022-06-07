@@ -1,0 +1,23 @@
+Register <br /> 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+{% if  loop.last %}
+<br /> <br /> <br /> {{message}} <br /> <br /> <br /> 
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}   
+  <form   method="POST">
+{{registerform.csrf_token}}<br /> 
+ Username:<br />
+ {{registerform.username}}  <br /> 
+ Password:  <br /> 
+{{registerform.password(type="password")}} <br /> 
+ Password (again): <br /> 
+{{registerform.password2(type="password")}} <br /> 
+  {{registerform.button}}<br />
+  </form>   <br> <br> 
+  <a  href="/login">Login</a>
+  
+ 
